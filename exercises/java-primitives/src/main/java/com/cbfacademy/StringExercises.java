@@ -4,7 +4,16 @@ public class StringExercises {
 
     public String fromCharacters(char[] characters) {
         // TODO - Write code that creates a String from the input array of characters
+        String newString = " ";
+        for (char a : characters) {
+            System.out.println(a);
+            String charString = String.valueOf(a);
+            newString = newString +(charString);
+        }
+    
         throw new RuntimeException("Not implemented");
+        
+        return newString;
     }
 
     public Long howMany(String text, Character character) {
