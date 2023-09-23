@@ -14,6 +14,8 @@ public class App {
         FileInputStream input = new FileInputStream("C:\\Users\\Admin\\cbfacademy\\java-exercises-YOkolo24\\homework\\input-output\\src\\main\\resources\\example.properties");
             example.load(input);
             example.forEach((key, value) -> System.out.println(key + " = " + value));
+        
+        input.close();
 
         } catch (IOException ex) {
             ex.printStackTrace();
