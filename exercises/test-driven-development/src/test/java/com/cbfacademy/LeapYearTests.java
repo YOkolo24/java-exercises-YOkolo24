@@ -47,13 +47,13 @@ public class LeapYearTests {
     
     static Stream<Arguments> returnsTrueWhenYearIsDivisibleBy100() {
         return Stream.of(
-             arguments(1600, false),
+             arguments(1600, true),
             arguments(1700, false),
             arguments(1800, false),
             arguments(1900, false),
-            arguments(2000, false),
+            arguments(2000, true),
             arguments(2200, false),
-            arguments(2400, false)    
+            arguments(2400, true)    
         );
     }
 }
