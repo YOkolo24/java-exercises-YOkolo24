@@ -11,7 +11,7 @@ public class LeapYearTests {
     @Test
     @DisplayName("return true if year is divisible by 400")
     public void returnTrueWhenInputIsDivisibleBy400() {
-        final boolean actual = LeapYear.of(400);
+        final boolean actual = LeapYear.isLeapYear(400);
         assertThat(actual, is(true));
     }
     
