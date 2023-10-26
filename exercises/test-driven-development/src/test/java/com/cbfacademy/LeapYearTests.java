@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 @DisplayName("The LeapYear class should")
 public class LeapYearTests {
     
-    @DisplayName("return true if year is divisible sby 400")
+    @DisplayName("return true if year is divisible by 400")
     @ParameterizedTest
     @MethodSource
     
@@ -34,6 +34,26 @@ public class LeapYearTests {
             arguments(2000, true),
             arguments(2200, false),
             arguments(2400, true)   
+        );
+    }
+    
+    @DisplayName("return true if year is divisible by 100")
+    @ParameterizedTest
+    @MethodSource
+    public void returnsTrueWhenYearIsDivisibleBy100(int year, Boolean expected) {
+        final Boolean result = LeapYear.isLeapYear(year);
+        assertThat(result, is(expected));
+    }
+    
+    static Stream<Arguments> returnsTrueWhenYearIsDivisibleBy100() {
+        return Stream.of(
+             arguments(1600, false),
+            arguments(1700, false),
+            arguments(1800, false),
+            arguments(1900, false),
+            arguments(2000, false),
+            arguments(2200, false),
+            arguments(2400, false)    
         );
     }
 }
