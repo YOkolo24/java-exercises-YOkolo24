@@ -11,6 +11,8 @@ public class Copier {
     }
 
     public void copy() {
-        throw new RuntimeException("Not Implemented");
+        
+        final String character = this.source.getCharacter();
+        this.destination.setCharacter(character);  
     }
 }
