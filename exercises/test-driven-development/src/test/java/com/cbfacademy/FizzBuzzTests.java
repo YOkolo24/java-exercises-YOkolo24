@@ -16,15 +16,21 @@ public class FizzBuzzTests {
         assertThat(actual, is("1"));
     }
     @Test
-    @DisplayName("return 'Fizz' when the input is 3")
-    public void returnFizzWhenInputIs3() {
+    @DisplayName("return 'Fizz' when the input is multiple of 3")
+    public void returnFizzWhenInputIsMultipleOf3() {
         final String actual = FizzBuzz.of(3);
         assertThat(actual, is("Fizz"));
     } 
     @Test
-    @DisplayName("return 'Buzz' when the input is 5")
-    public void returnFizzWhenInputIs5() {
+    @DisplayName("return 'Buzz' when the input is multiple of 5")
+    public void returnBuzzWhenInputIsMultipleOf5() {
         final String actual = FizzBuzz.of(5);
         assertThat(actual, is("Buzz"));
+    }
+    @Test
+    @DisplayName("return 'FizzBuzz' when the input is multiple of 15")
+    public void returnFizzBuzzWhenInputIsMultipleOf15() {
+        final String actual = FizzBuzz.of(15);
+        assertThat(actual, is("FizzBuzz"));
     }
 }
