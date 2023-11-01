@@ -11,8 +11,10 @@ public class Copier {
     }
 
     public void copy() {
-        
-        final String character = this.source.getCharacter();
-        this.destination.setCharacter(character);  
+        while (true) {
+           final String character = this.source.getCharacter(); 
+           if (character.equals("\n")) break;
+           this.destination.setCharacter(character);
+        }
     }
 }
