@@ -21,4 +21,10 @@ public class FizzBuzzTests {
         final String actual = FizzBuzz.of(3);
         assertThat(actual, is("Fizz"));
     } 
+    @Test
+    @DisplayName("return 'Buzz' when the input is 5")
+    public void returnFizzWhenInputIs5() {
+        final String actual = FizzBuzz.of(5);
+        assertThat(actual, is("Buzz"));
+    }
 }
