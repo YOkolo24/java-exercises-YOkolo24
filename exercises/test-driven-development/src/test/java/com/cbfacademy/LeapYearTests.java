@@ -16,44 +16,33 @@ import java.util.stream.Stream;
 @DisplayName("The LeapYear class should")
 public class LeapYearTests {
     
-    @DisplayName("return true if year is divisible by 400")
+    @DisplayName("confirm whether a given year is a leap year or not")
     @ParameterizedTest
     @MethodSource
     
-    public void returnsTrueWhenYearIsDivisibleBy400(int year, Boolean expected) {
+    public void returnsTrueWhenYearIsLeapYear(int year, Boolean expected) {
         final Boolean result = LeapYear.isLeapYear(year);
         assertThat(result, is(expected));
     }
     
-    static Stream<Arguments> returnsTrueWhenYearIsDivisibleBy400() {
+    static Stream<Arguments> returnsTrueWhenYearIsLeapYear() {
         return Stream.of(
-            arguments(1600, true),
             arguments(1700, false),
             arguments(1800, false),
             arguments(1900, false),
             arguments(2000, true),
-            arguments(2200, false),
-            arguments(2400, true)   
-        );
-    }
-    
-    @DisplayName("return true if year is divisible by 100")
-    @ParameterizedTest
-    @MethodSource
-    public void returnsTrueWhenYearIsDivisibleBy100(int year, Boolean expected) {
-        final Boolean result = LeapYear.isLeapYear(year);
-        assertThat(result, is(expected));
-    }
-    
-    static Stream<Arguments> returnsTrueWhenYearIsDivisibleBy100() {
-        return Stream.of(
-             arguments(1600, true),
-            arguments(1700, false),
-            arguments(1800, false),
-            arguments(1900, false),
-            arguments(2000, true),
-            arguments(2200, false),
-            arguments(2400, true)    
+            arguments(2001, false),
+            arguments(2002, false),
+            arguments(2003, false), 
+            arguments(2004, true),
+            arguments(2005, false), 
+            arguments(2006, false), 
+            arguments(2007, false), 
+            arguments(2008, true), 
+            arguments(2009, false), 
+            arguments(2010, false), 
+            arguments(2011, false) 
+              
         );
     }
 }
